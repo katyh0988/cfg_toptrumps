@@ -30,7 +30,7 @@ def turn():
     player2 = cards[1]
     
     # prints the card drawn and skill points
-    print("\n" + p1_name + " draws " + list(cards_dict[player1].values())[0])
+    print("\n{} draws {}".format(p1_name, list(cards_dict[player1].values())[0]))
     for n in range(1,6):
         print(list(cards_dict[player1].keys())[n] + ": " + \
               str(list(cards_dict[player1].values())[n]))
@@ -45,7 +45,7 @@ def turn():
         skill = input("Choose magic, cunning, courage, wisdom or temper:\n").capitalize()
         
     # prints player 2's card plus score of skill picked by player 1    
-    print("\n" + p2_name + " draws " + cards_dict[player2]["Individual"] + " with a " + skill.upper() + " score of " + str(cards_dict[player2][skill]))
+    print("\n{} draws {} with a {} score of {}\n".format(p2_name, cards_dict[player2]["Individual"], skill.upper(),str(cards_dict[player2][skill])))
    
     # save skill points as variables so we can compare them
     player1_score = cards_dict[player1][skill]
@@ -53,8 +53,8 @@ def turn():
    
     # print outcome
     if player1_score > player2_score:
-        print("\n" + p1_name + " wins!")
+        print("{} wins!".format(p1_name))
     elif player1_score < player2_score:
-        print("\n" + p2_name + " wins!")
+        print("{} wins!".format(p2_name))
     else:
-        print("\nIt's a draw!") 
+        print("It's a draw!") 
