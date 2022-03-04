@@ -1,0 +1,9 @@
+import pandas as pd
+import random
+
+url = "https://raw.githubusercontent.com/APStats/Top-Trumps-data/master/Top" \
+      "%20Trumps%20-%20Harry%20Potter%20and%20the%20Deathly%20Hallows%20Part" \
+      "%202.csv"
+
+cards_df = pd.read_csv(url)
+cards_dict = cards_df.to_dict('index')
