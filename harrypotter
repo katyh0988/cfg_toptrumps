@@ -13,6 +13,7 @@ cards_dict = cards_df.to_dict('index')
 def deal():
     player = random.randint(0,29)
     opponent = random.randint(0,29)
+    
     # to make sure players don't draw the same card
     while player == opponent:
         opponent = random.randint(0,29)
@@ -33,6 +34,8 @@ def turn():
     for n in range(1,6):
         print(list(cards_dict[player1].keys())[n] + ": " + \
               str(list(cards_dict[player1].values())[n]))
+    
+    # asks player 1 to choose a skill
     skill = input("Pick a skill. Magic, cunning, courage, " \
                  "wisdom or temper?\n").capitalize()
     
@@ -42,7 +45,7 @@ def turn():
         skill = input("Choose magic, cunning, courage, wisdom or temper:\n").capitalize()
         
     # prints player 2's card plus score of skill picked by player 1    
-    print("\n" + p2_name + " draws " + cards_dict[player2]["Individual"] + " with a " + stat.upper() + " score of " + str(cards_dict[player2][skill]))
+    print("\n" + p2_name + " draws " + cards_dict[player2]["Individual"] + " with a " + skill.upper() + " score of " + str(cards_dict[player2][skill]))
    
     # save skill points as variables so we can compare them
     player1_score = cards_dict[player1][skill]
